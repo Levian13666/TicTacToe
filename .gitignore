@@ -9,6 +9,7 @@ bin/
 tmp/
 .idea/
 *.tmp
+*.iml
 *.bak
 *.swp
 *~.nib
@@ -55,7 +56,6 @@ build/
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
 
-*.iml
 *_i.c
 *_p.c
 *.ilk

@@ -47,7 +47,7 @@ public class GameService {
             for (Pair<Integer, Integer> coordinates : availableCoordinates) {
                 DecisionNode decisionNode = new DecisionNode(null, copyGameState(parentNode.getGameState()));
                 parentNode.getNodes().add(decisionNode);
-                decisionNode.getGameState()[coordinates.getFirst()][coordinates.getSecond()] = type.equals(Type.MAX) ? GameGrid.State.CROSS : GameGrid.State.CIRCLE;
+                decisionNode.getGameState()[coordinates.getFirst()][coordinates.getSecond()] = type.equals(Type.MAX) ? GameGrid.State.CIRCLE : GameGrid.State.CROSS;
                 decisionNode.setStep(new int[]{coordinates.getFirst(), coordinates.getSecond()});
                 if (!GameGrid.getGameStatus(decisionNode.getGameState()).equals(GameGrid.State.NONE)) {
                     decisionNode.setNodeScore((maxScore - level) * type.getScoreModifier());

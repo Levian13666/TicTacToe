@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.example</groupId>
-	<artifactId>BaseWebSocketApp</artifactId>
+	<artifactId>TicTacToe</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
@@ -55,6 +55,12 @@
 			<groupId>org.webjars</groupId>
 			<artifactId>stomp-websocket</artifactId>
 			<version>2.3.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
 		</dependency>
 
 	</dependencies>

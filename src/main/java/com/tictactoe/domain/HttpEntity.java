@@ -1,4 +1,4 @@
-package com.example.domain;
+package com.tictactoe.domain;
 
 public class HttpEntity<T> {
 

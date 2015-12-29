@@ -1,4 +1,4 @@
-package com.example.controllers;
+package com.tictactoe.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;

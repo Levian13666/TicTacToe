@@ -1,6 +1,6 @@
-package com.example.controllers;
+package com.tictactoe.controllers;
 
-import com.example.domain.HttpEntity;
+import com.tictactoe.domain.HttpEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

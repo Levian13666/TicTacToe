@@ -34,10 +34,17 @@ public class Application {
                     try {
                         gameGrid.getGrid()[Integer.valueOf(input.split(",")[0])][Integer.valueOf(input.split(",")[1])] = GameGrid.State.CROSS;
                         GameGrid.printGrid(gameGrid.getGrid());
-                        LOG.info("Please wait...");
-                        Pair<int[], DecisionTree> result = GameService.makeStep(gameGrid.getGrid());
-                        gameGrid.getGrid()[result.getFirst()[0]][result.getFirst()[1]] = GameGrid.State.CIRCLE;
-                        GameGrid.printGrid(gameGrid.getGrid());
+                        if (GameGrid.getGameStatus(gameGrid.getGrid()).equals(GameGrid.State.NONE)) {
+                            LOG.info("Please wait...");
+                            Pair<int[], DecisionTree> result = GameService.makeStep(gameGrid.getGrid());
+                            gameGrid.getGrid()[result.getFirst()[0]][result.getFirst()[1]] = GameGrid.State.CIRCLE;
+                            GameGrid.printGrid(gameGrid.getGrid());
+                            if (!GameGrid.getGameStatus(gameGrid.getGrid()).equals(GameGrid.State.NONE)) {
+                                break;
+                            }
+                        } else {
+                            break;
+                        }
                     } catch (NumberFormatException e) {
                         LOG.info("Incorrect input...");
                     }

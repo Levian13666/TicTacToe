@@ -8,22 +8,22 @@ import java.util.List;
  */
 public class DecisionNode {
 
-    private Integer nodeValue = null;
+    private Integer nodeScore = null;
     private List<DecisionNode> nodes = new ArrayList<>();
     private GameGrid.State[][] gameState;
     private int[] step = new int[]{0,0};
 
-    public DecisionNode(Integer nodeValue, GameGrid.State[][] gameState) {
-        this.nodeValue = nodeValue;
+    public DecisionNode(Integer nodeScore, GameGrid.State[][] gameState) {
+        this.nodeScore = nodeScore;
         this.gameState = gameState;
     }
 
-    public Integer getNodeValue() {
-        return nodeValue;
+    public Integer getNodeScore() {
+        return nodeScore;
     }
 
-    public void setNodeValue(Integer nodeValue) {
-        this.nodeValue = nodeValue;
+    public void setNodeScore(Integer nodeScore) {
+        this.nodeScore = nodeScore;
     }
 
     public List<DecisionNode> getNodes() {

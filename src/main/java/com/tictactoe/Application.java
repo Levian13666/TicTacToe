@@ -15,6 +15,8 @@ import java.io.InputStreamReader;
 @SpringBootApplication
 public class Application {
 
+    public static final GameGrid GAME_GRID = new GameGrid();
+
     private static Logger LOG = Logger.getLogger(Application.class);
 
     public static void main(String[] args) throws IOException {

@@ -90,4 +90,28 @@ public class GameGrid {
         return result == 0 ? State.NONE : result == -3 ? State.CIRCLE : State.CROSS;
     }
 
+    @JsonIgnore
+    public static int[] getWinnerCoordinates(State[][] grid) {
+        int[] winnerCoordinates = new int[4];
+        //pwc - possible winning coordinates
+        int[][][] pwc = {
+                {{0,0}, {0,1}, {0,2}}, {{1,0}, {1,1}, {1,2}}, {{2,0}, {2,1}, {2,2}},
+                {{0,0}, {1,0}, {2,0}}, {{0,1}, {1,1}, {2,1}}, {{0,2}, {1,2}, {2,2}},
+                {{0,0}, {1,1}, {2,2}}, {{0,2}, {1,1}, {2,0}}
+        };
+        for (int[][] aPwc : pwc) {
+            int result = grid[aPwc[0][0]][aPwc[0][1]].getValue()
+                    + grid[aPwc[1][0]][aPwc[1][1]].getValue()
+                    + grid[aPwc[2][0]][aPwc[2][1]].getValue();
+            if (result == -3 || result == 3) {
+                winnerCoordinates[0] = aPwc[0][0];
+                winnerCoordinates[1] = aPwc[0][1];
+                winnerCoordinates[2] = aPwc[2][0];
+                winnerCoordinates[3] = aPwc[2][1];
+                break;
+            }
+        }
+        return winnerCoordinates;
+    }
+
 }

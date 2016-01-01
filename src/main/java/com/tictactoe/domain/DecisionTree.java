@@ -5,6 +5,8 @@ package com.tictactoe.domain;
  */
 public class DecisionTree {
 
+    private int winCoordinates[] = new int[4];
+    private GameGrid.State winner = null;
     private DecisionNode mainNode;
     private int step[] = new int[2];
 
@@ -31,5 +33,21 @@ public class DecisionTree {
 
     public void setStep(int[] step) {
         this.step = step;
+    }
+
+    public GameGrid.State getWinner() {
+        return winner;
+    }
+
+    public void setWinner(GameGrid.State winner) {
+        this.winner = winner;
+    }
+
+    public int[] getWinCoordinates() {
+        return winCoordinates;
+    }
+
+    public void setWinCoordinates(int[] winCoordinates) {
+        this.winCoordinates = winCoordinates;
     }
 }

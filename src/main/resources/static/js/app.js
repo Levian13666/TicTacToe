@@ -131,6 +131,16 @@ function MainController($scope, $http, socketService, $log) {
         $http.get('/rest/reset');
     };
 
+    $scope.letStart =  function() {
+        $http.get('/rest/letStart').then(function(res){
+            var result = res.data.result;
+            $log.log(result);
+            if (result.step.length > 0) {
+                drawStep('o', result.step[1], result.step[0]);
+            }
+        });
+    };
+
     /*$http.get('/rest').then(function(res){
         $scope.data = 'Rest: ' + res.data.result;
     });

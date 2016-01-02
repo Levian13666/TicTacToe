@@ -35,6 +35,14 @@ public class WebRestController {
         }
         return new HttpEntity<>(decisionTree);
     }
+
+    @RequestMapping("/letStart")
+    public HttpEntity<DecisionTree> makeStep(
+    ) {
+        DecisionTree decisionTree = GameService.makeStep(Application.GAME_GRID.getGrid());
+        Application.GAME_GRID.getGrid()[decisionTree.getStep()[0]][decisionTree.getStep()[1]] = GameGrid.State.CIRCLE;
+        return new HttpEntity<>(decisionTree);
+    }
     
     @RequestMapping("/reset")
     public void reset() {
